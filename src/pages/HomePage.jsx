@@ -19,14 +19,14 @@ export default function HomePage() {
     }, []);
 
     return (
-        <div>
+        <div className="text-center my-5">
             <h1>Home Page</h1>
             <h2>Movies</h2>
             <div className="container">
                 <div className="row">
 
                     {movies.map(movie => (
-                        <div key={movie.id} className="col">
+                        <div key={movie.id} className="col d-flex justify-content-center">
                             <Cards id={movie.id} title={movie.title} image={movie.image} />
                         </div>
                     ))}
