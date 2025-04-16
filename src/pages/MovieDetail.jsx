@@ -20,16 +20,20 @@ export default function MovieDetail() {
     return (
         <>
             <div className="p-5 mb-4 bg-light rounded-3 d-flex">
-                <div className="container-fluid py-5">
-                    <h1 className="display-5 fw-bold">{movie?.title}</h1>
-                    <p className="col-md-8 fs-4">{movie?.abstract}</p>
-                    <ul>
-                        <li>{movie?.director}</li>
-                        <li>{movie?.genre}</li>
-                        <li>{movie?.release_year}</li>
-                    </ul>
+                <div>
+                    <img src={`http://localhost:3000/${movie?.image}`} alt="" />
                 </div>
-                <div><img src={`http://localhost:3000/${movie?.image}`} alt="" />
+                <div className="container-fluid py-5">
+                    <div>
+                        <h1 className="display-5 fw-bold">{movie?.title}</h1>
+                        <p className="col-md-8 fs-4">{movie?.abstract}</p>
+                        <ul className='list-unstyled'>
+                            <li>{movie?.director}</li>
+                            <li>{movie?.genre}</li>
+                            <li>{movie?.release_year}</li>
+                        </ul>
+                    </div>
+
                 </div>
 
             </div>
