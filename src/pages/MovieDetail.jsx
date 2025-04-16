@@ -24,11 +24,11 @@ export default function MovieDetail() {
 
     return (
         <>
-            <div className="p-5 mb-4 bg-light rounded-3 d-flex">
+            <div className="p-5 mb-4 bg-light rounded-3 d-flex p-2">
                 <div>
-                    <img src={`http://localhost:3000/${movie.image}`} alt={movie.title || "Movie Image"} />
+                    <img src={`http://localhost:3000/${movie.image}`} className='Detail_image' alt={movie.title || "Movie Image"} />
                 </div>
-                <div className="container-fluid py-5">
+                <div className="container-fluid p-3 border border-dark">
                     <div>
                         <h1 className="display-5 fw-bold">{movie.title}</h1>
                         <p className="col-md-8 fs-4">{movie.abstract}</p>

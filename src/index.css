@@ -14,3 +14,8 @@
     height: 18rem;
     object-fit: cover;
 }
+
+.Detail_image {
+    max-width: 400px;
+    height: auto;
+}
