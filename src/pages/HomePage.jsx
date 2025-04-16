@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Cards from "../components/cards";
 
 
 export default function HomePage() {
@@ -26,17 +27,7 @@ export default function HomePage() {
 
                     {movies.map(movie => (
                         <div key={movie.id} className="col">
-                            <div className="card">
-
-                                <div className="card-header">
-                                    <img src={`http://localhost:3000/${movie.image}`} alt="" className="card-img-top" />
-                                    <h2>{movie.title}</h2>
-                                    <Link to={`/movies/${movie.id}`} className="btn btn-primary mt-2">
-                                        View Details
-                                    </Link>
-                                </div>
-
-                            </div>
+                            <Cards id={movie.id} title={movie.title} image={movie.image} />
                         </div>
                     ))}
 
