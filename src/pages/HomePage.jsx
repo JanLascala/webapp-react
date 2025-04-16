@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function HomePage() {
     const [movies, setMovies] = useState([]);
@@ -29,6 +31,9 @@ export default function HomePage() {
                                 <div className="card-header">
                                     <img src={`http://localhost:3000/${movie.image}`} alt="" className="card-img-top" />
                                     <h2>{movie.title}</h2>
+                                    <Link to={`/movies/${movie.id}`} className="btn btn-primary mt-2">
+                                        View Details
+                                    </Link>
                                 </div>
 
                             </div>
