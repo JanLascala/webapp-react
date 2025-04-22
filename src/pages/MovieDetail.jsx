@@ -62,7 +62,7 @@ export default function MovieDetail() {
                 </div>
                 <div className='form m-5'>
                     <h3 className="text-center">Add a Review</h3>
-                    <Review_form />
+                    <Review_form movieId={movie.id} />
                 </div>
 
             </div>
