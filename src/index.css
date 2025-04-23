@@ -19,3 +19,16 @@
     max-width: 400px;
     height: auto;
 }
+
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 49, 49, 0.29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}

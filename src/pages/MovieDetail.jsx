@@ -1,26 +1,31 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Review_form from '../components/Review_form';
+import { useLoader } from "../Context/LoaderContext";
 
 export default function MovieDetail() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
+    const { showLoader, hideLoader } = useLoader();
 
     useEffect(() => {
+        showLoader();
         fetch(`http://localhost:3000/api/v1/movies/${id}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 setMovie(data);
+                hideLoader();
             })
             .catch((error) => {
                 console.error("Error fetching movies:", error);
+                hideLoader();
             });
-    }, [id]);
+    }, [id, showLoader, hideLoader]);
 
 
     if (!movie) {
-        return <p>Loading...</p>;
+        return <p>Loading movie details...</p>;
     }
 
     return (
